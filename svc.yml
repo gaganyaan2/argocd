@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-nginx-svc
+  labels:
+    run: my-nginx-svc
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+#      nodePort: 30081
+  selector:
+    run: my-nginx
+  type: NodePort
